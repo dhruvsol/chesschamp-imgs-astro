@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const query = Astro.url;
+// console.log(a.searchParams.get("rank"), "helo");
+---
+
+<Layout title="Welcome to Astro.">
+  <div class="flex justify-center min-h-screen items-center">
+    <div id="nft-image" class="relative">
+      <img
+        src={`/NFT/${query.searchParams.get("role")}.png`}
+        alt={"NFT Image"}
+        class="w-[300px] h-[300px]"
+      />
+      <h1
+        class="text-black/60 absolute bottom-7 left-36 text-3xl font-sans-pro font-bold"
+      >
+        {query.searchParams.get("rank")}
+      </h1>
+
+      {
+        query.searchParams.get("winner") === "true" && (
+          <div class="absolute top-0 right-0 left-0 ">
+            <img
+              src={"/NFT/winner.png"}
+              alt={"Nft Image"}
+              class="w-[300px] h-[300px]"
+            />
+          </div>
+        )
+      }
+    </div>
+  </div>
+</Layout>
