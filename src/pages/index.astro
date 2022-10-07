@@ -9,7 +9,7 @@ const query = Astro.url;
   <div class="flex justify-center min-h-screen items-center">
     <div id="nft-image" class="relative">
       <img
-        src={`/NFT500/${query.searchParams.get("role")}.png`}
+        src={`/NFT1000/${query.searchParams.get("role")}.png`}
         alt={"NFT Image"}
         class="w-[300px] h-[300px]"
       />
@@ -43,7 +43,6 @@ const query = Astro.url;
             </clipPath>
           </defs>
         </svg>
-
         <h1 class="text-black/60 text-3xl font-sans-pro font-bold">
           {query.searchParams.get("rank")}
         </h1>
