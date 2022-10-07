@@ -13,11 +13,41 @@ const query = Astro.url;
         alt={"NFT Image"}
         class="w-[300px] h-[300px]"
       />
-      <h1
-        class="text-black/60 absolute bottom-7 left-[8.5rem] text-3xl font-sans-pro font-bold"
+      <div
+        class="absolute bottom-7 left-[7rem] flex justify-center items-center gap-x-2"
       >
-        {query.searchParams.get("rank")}
-      </h1>
+        <svg
+          width="16"
+          height="28"
+          viewBox="0 0 16 28"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clip-path="url(#clip0_36_49)">
+            <path
+              d="M8 0L10.4716 4.58128L16 5.31648L12.0013 8.88225L12.9432 13.9184L8 11.5405L3.05683 13.9184L4.00126 8.88225L0 5.31648L5.52841 4.58128L8 0Z"
+              fill="black"
+              fill-opacity="0.65"></path>
+            <path
+              d="M16 28L8 23.4049L0 28V24.8845L8 20.2895L16 24.8845V28Z"
+              fill="black"
+              fill-opacity="0.65"></path>
+            <path
+              d="M16 22.2562L8 17.6611L0 22.2562V19.1407L8 14.5457L16 19.1407V22.2562Z"
+              fill="black"
+              fill-opacity="0.65"></path>
+          </g>
+          <defs>
+            <clipPath id="clip0_36_49">
+              <rect width="16" height="28" fill="white"></rect>
+            </clipPath>
+          </defs>
+        </svg>
+
+        <h1 class="text-black/60 text-3xl font-sans-pro font-bold">
+          {query.searchParams.get("rank")}
+        </h1>
+      </div>
 
       {
         query.searchParams.get("winner") === "true" && (
